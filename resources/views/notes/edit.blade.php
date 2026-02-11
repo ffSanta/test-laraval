@@ -12,5 +12,9 @@
         <button type="submit">Update</button>
     </form>
     <p>{{$note->id}}</p>
-    <a href="/notes/{{$note->id}}/delete">Delete</a>
+    <form method="POST" action="/notes/{{$note->id}}">
+        @csrf
+        @method('DELETE')
+    <button type="submit">Delete</button>
+    </form>
 </x-layout>
